@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<%= stylesheet_link_tag "iui" %>
+<%= javascript_include_tag "iui" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" %>
+<title><%=h params[:id] %></title>
+</head>
+<div class="toolbar">
+    <h1 id="pageTitle"></h1>
+    <a id="backButton" class="button" href="#"></a>
+    <a class="button" href="/meme/popular/pt">Popular</a>
+</div>
+
+<ul id="<%=h params[:id] %>" title="<%=h params[:id] %>" selected="true">
+<%- for message in @messages -%>
+<%- if message['category'] == "text" -%>
+<li><%= message['content'] %></li>
+<%- elsif message['category'] == "photo" -%>
+<li><img src="<%=h message['content'] %>" border=1 width=150 height=150> <%=h message['comment'] %></li>
+<%- elsif message['category'] == "video" -%>
+<li>
+<div id="ytapiplayer">
+  </div>
+<object width="560" height="344">
+<param name="movie" value="<%=h message['content'] %>&fs=1&enablejsapi=1&autoplay=1"</param>
+    <param name="allowfullscreen"   value="true"></param>
+    <param name="wmode"             value="opaque">          </param>
+    <param name="menu"              value="false">                           </param>
+    <param name="allowscriptaccess" value="sameDomain">                          </param>
+
+<embed src="<%=h message['content'] %>&fs=1&enablejsapi=1&autoplay=1"
+               type="application/x-shockwave-flash" 
+               allowscriptaccess="always" 
+               menu="false" 
+               allowfullscreen="true" 
+               wmode="opaque" 
+               width="560" 
+               height="344">
+</embed>
+</object>
+
+</li>
+<%- end -%>
+<%- end -%>
+</ul>
+
+</body>
+
+

@@ -1,0 +1,34 @@
+<ul id="home" title="Popular" selected="true">
+<%- for message in @messages -%>
+<%- if message['category'] == "text" -%>
+<li><%= message['content'] %></li>
+<%- elsif message['category'] == "photo" -%>
+<li><img src="<%=h message['content'] %>" border=1 width=150 height=150> <%=h message['comment'] %></li>
+<%- elsif message['category'] == "video" -%>
+<li>
+<div id="ytapiplayer">
+  </div>
+<object width="560" height="344">
+<param name="movie" value="<%=h message['content'] %>&fs=1&enablejsapi=1&autoplay=1"</param>
+    <param name="allowfullscreen"   value="true"></param>
+    <param name="wmode"             value="opaque">          </param>
+    <param name="menu"              value="false">                           </param>
+    <param name="allowscriptaccess" value="sameDomain">                          </param>
+
+<embed src="<%=h message['content'] %>&fs=1&enablejsapi=1&autoplay=1"
+               type="application/x-shockwave-flash" 
+               allowscriptaccess="always" 
+               menu="false" 
+               allowfullscreen="true" 
+               wmode="opaque" 
+               width="560" 
+               height="344">
+</embed>
+</object>
+
+</li>
+<%- end -%>
+<%- end -%>
+</ul>
+
+
