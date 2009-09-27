@@ -1,4 +1,4 @@
-set :application, "Meme + YQL"
+set :application, "meme_yql"
 set :repository,  "http://github.com/lwelti/meme_yql"
 
 # If you aren't deploying to /u/apps/#{application} on the target
@@ -10,6 +10,6 @@ set :repository,  "http://github.com/lwelti/meme_yql"
 # your SCM below:
 # set :scm, :subversion
 
-role :app, "lucasonrails.com"
-role :web, "lucasonrails.com"
+role :app, "_"
+role :web, "_"
 role :db,  "_", :primary => true
