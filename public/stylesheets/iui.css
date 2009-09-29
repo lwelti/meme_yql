@@ -156,7 +156,7 @@ body > ul > li {
     margin: 0;
     border-bottom: 1px solid #E0E0E0;
     padding: 8px 0 8px 10px;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     list-style: none;
 }
@@ -181,12 +181,12 @@ body > ul > li.group:first-child {
 }
 
 body > ul > li > a {
-    display: block;
+#    display: block;
     margin: -8px 0 -8px -10px;
-    padding: 8px 32px 8px 10px;
+    padding: 8px 1px 8px 10px;
     text-decoration: none;
     color: inherit;
-    background: url(/images/listArrow.png) no-repeat right center;
+#    background: url(/images/listArrow.png) no-repeat right center;
 }
 
 a[target="_replace"] {
@@ -194,11 +194,12 @@ a[target="_replace"] {
     -webkit-box-sizing: border-box;
     padding-top: 25px;
     padding-bottom: 25px;
-    font-size: 18px;
+    font-size: 14px;
     color: cornflowerblue;
     background-color: #FFFFFF;
     background-image: none;
 }
+
 
 /************************************************************************************************/
     
