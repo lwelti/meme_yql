@@ -1,9 +1,9 @@
 <ul id="home" title="Popular" selected="true">
 <%- for message in @messages -%>
 <%- if message['category'] == "text" -%>
-<li><%= message['content'] %></li>
+<li><%= truncate(message['content'],:length => 100) %></li>
 <%- elsif message['category'] == "photo" -%>
-<li><img src="<%=h message['content'] %>" border=1 width=150 height=150> <%=h message['comment'] %></li>
+<li><img src="<%=h message['content'] %>" border=1 width=150 height=150> <%=h truncate(message['comment'],:lenght => 50) %></li>
 <%- elsif message['category'] == "video" -%>
 <li>
 <div id="ytapiplayer">
